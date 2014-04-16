@@ -30,6 +30,7 @@ when 'mac_os_x'
 
 when 'windows'
 
+  node.default['virtualbox']['version'] = vbox_version(node['virtualbox']['url'])
   sha256sum = vbox_sha256sum(node['virtualbox']['url'])
   win_pkg_version = node['virtualbox']['version']
   Chef::Log.debug("Inspecting windows package version: #{win_pkg_version.inspect}")
