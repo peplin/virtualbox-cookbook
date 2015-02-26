@@ -44,6 +44,9 @@ when 'windows'
 
 when 'debian'
 
+  package 'lsb'
+  package 'lsb-release'
+  
   apt_repository 'oracle-virtualbox' do
     uri 'http://download.virtualbox.org/virtualbox/debian'
     key 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc'
