@@ -6,6 +6,10 @@ Installs Virtualbox on OS X, Debian/Ubuntu or Windows.
 Changes
 =======
 
+## v1.0.4
+
+* Add `build-essential` cookbook dependency
+
 ## v1.0.3
 
 * Update `yum` dependency to version 3
