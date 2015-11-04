@@ -44,6 +44,17 @@ when 'windows'
 
 when 'debian'
 
+  package 'lsb'
+
+  ohai "reload-lsb" do
+    action :nothing
+    plugin "lsb"
+  end
+
+  package 'lsb-release' do
+    notifies :reload, 'ohai[reload-lsb]', :immediately
+  end
+  
   apt_repository 'oracle-virtualbox' do
     uri 'http://download.virtualbox.org/virtualbox/debian'
     key 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc'
