@@ -23,6 +23,7 @@
 include_recipe "apt"
 
 package "build-essential"
+package "ruby-dev"
 gem_package "ruby-shadow"
 
 user 'virtualbox-user' do
