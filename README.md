@@ -1,7 +1,7 @@
 Description
 ===========
 
-Installs Virtualbox on OS X, Debian/Ubuntu or Windows.
+Installs Virtualbox on OS X, Debian/Ubuntu, RHEL/CentOS or Windows.
 
 Changes
 =======
