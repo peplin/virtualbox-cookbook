@@ -6,6 +6,11 @@ Installs Virtualbox on OS X, Debian/Ubuntu or Windows.
 Changes
 =======
 
+## v2.0
+
+* Update to Virtualbox 5.1 as default
+* Point to new VirtualBox Ubuntu 2016 signing key
+
 ## v1.0.4
 * Add chefignore
 
