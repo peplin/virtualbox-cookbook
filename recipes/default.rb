@@ -47,7 +47,6 @@ when 'debian'
   apt_repository 'oracle-virtualbox' do
     uri 'http://download.virtualbox.org/virtualbox/debian'
     key 'A2F683C52980AECF'
-    #key 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc'
     distribution node['lsb']['codename']
     components ['contrib']
   end
@@ -61,7 +60,7 @@ when 'rhel', 'fedora'
     description "#{node['platform_family']} $releasever - $basearch - Virtualbox"
     baseurl "http://download.virtualbox.org/virtualbox/rpm/#{node['platform_family']}/$releasever/$basearch"
     gpgcheck true
-    gpgkey 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox_2016.asc'
+    gpgkey 'https://www.virtualbox.org/download/oracle_vbox.asc'
   end
 
   package "VirtualBox-#{node['virtualbox']['version']}"
