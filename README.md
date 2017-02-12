@@ -6,10 +6,12 @@ Installs Virtualbox on OS X, Debian/Ubuntu or Windows.
 Changes
 =======
 
-## v2.0
+## v2.0.1
 
-* Update to Virtualbox 5.1 as default
-* Point to new VirtualBox Ubuntu 2016 signing key
+* Update to Virtualbox-5.1 as default
+* Point to new signing keys for Ubuntu and RHEL
+* Expand test kitchen to test on Debian, Ubuntu, and centos-6
+* Add inspec test to verify install of VirtualBox-5.1
 
 ## v1.0.4
 * Add chefignore
@@ -208,7 +210,7 @@ Contributions
 =============
 
 The source for this cookbook is hosted on
-[GitHub](https://github.com/peplin/virtualbox-cookbook). If you have any issues
+[GitHub](https://github.com/bradleyd/virtualbox-cookbook). If you have any issues
 with this cookbook, please follow up there.
 
 License and Author
