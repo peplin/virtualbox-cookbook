@@ -5,6 +5,12 @@ driver:
 verifier:
   name: inspec
 
+transport:
+  username: vagrant
+  password: vagrant
+  elevated: true
+  name: winrm
+
 provisioner:
   name: chef_zero
 
@@ -14,6 +20,10 @@ platforms:
   - name: debian-8.6
   - name: centos-6.8
   - name: centos-7.2
+  - name: windows-2016
+    driver:
+      box: mwrock/Windows2016
+      gui: false
 
 suites:
 - name: default
