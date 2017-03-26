@@ -1,23 +1,32 @@
----
-driver_plugin: vagrant
+
+driver:
+  name: vagrant
+
+verifier:
+  name: inspec
+
+transport:
+  username: vagrant
+  password: vagrant
+  elevated: true
+  name: winrm
+
+provisioner:
+  name: chef_zero
 
 platforms:
-- name: debian-6
-  driver_config:
-    box: opscode-debian-6.0.7
-    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_debian-6.0.7_chef-11.2.0.box
-    require_chef_omnibus: 11.4.0
-- name: ubuntu-12.04
-  driver_config:
-    box: canonical-ubuntu-12.04
-    box_url: http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box
-    require_chef_omnibus: true
-- name: centos-6.3
-  driver_config:
-    box: opscode-centos-6.3
-    box_url: http://opscode-vm.s3.amazonaws.com/vagrant/opscode_centos-6.3_chef-11.2.0.box
+  - name: ubuntu-16.04
+  - name: ubuntu-16.10
+  - name: debian-8.6
+  - name: centos-6.8
+  - name: centos-7.2
+  - name: windows-2016
+    driver:
+      box: mwrock/Windows2016
+      gui: false
 
 suites:
 - name: default
-  run_list: ["recipe[virtualbox]"]
-  attributes: {}
+  run_list:
+    - recipe[virtualbox]
+  attributes:

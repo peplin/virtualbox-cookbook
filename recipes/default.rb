@@ -46,7 +46,7 @@ when 'debian'
 
   apt_repository 'oracle-virtualbox' do
     uri 'http://download.virtualbox.org/virtualbox/debian'
-    key 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc'
+    key 'A2F683C52980AECF'
     distribution node['lsb']['codename']
     components ['contrib']
   end
@@ -57,10 +57,10 @@ when 'debian'
 when 'rhel', 'fedora'
 
   yum_repository 'oracle-virtualbox' do
-    description "#{node['platform_family']} $releasever - $basearch - Virtualbox" 
+    description "#{node['platform_family']} $releasever - $basearch - Virtualbox"
     baseurl "http://download.virtualbox.org/virtualbox/rpm/#{node['platform_family']}/$releasever/$basearch"
     gpgcheck true
-    gpgkey 'http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc'
+    gpgkey 'https://www.virtualbox.org/download/oracle_vbox.asc'
   end
 
   package "VirtualBox-#{node['virtualbox']['version']}"
